@@ -10,6 +10,7 @@ public class DoorCellOpen : MonoBehaviour
     public GameObject ActionText;
     public GameObject TheDoor;
     public AudioSource CreakSound;
+    public GameObject ExtraCross;
 
     void Update()
     {
@@ -20,6 +21,7 @@ public class DoorCellOpen : MonoBehaviour
     {
         if (TheDistance <= 2) 
         {
+            ExtraCross.SetActive(true);
             ActionDisplay.SetActive(true);
             ActionText.SetActive(true);
         }
@@ -39,6 +41,7 @@ public class DoorCellOpen : MonoBehaviour
 
     void OnMouseExit()
     {
+        ExtraCross.SetActive(false);
         ActionDisplay.SetActive(false);
         ActionText.SetActive(false);
     }
