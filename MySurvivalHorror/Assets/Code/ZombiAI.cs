@@ -13,6 +13,7 @@ public class ZombiAI : MonoBehaviour
     public AudioSource HurtSound2;
     public AudioSource HurtSound3;
     public int hurtGen;
+    public GameObject theFlash;
 
     void Update()
     {
@@ -57,6 +58,9 @@ public class ZombiAI : MonoBehaviour
         {
             HurtSound3.Play();
         }
+        theFlash.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        theFlash.SetActive(false);
         yield return new WaitForSeconds(1.1f);
         GlobalHealth.currentHealth -= 5;
         yield return new WaitForSeconds(0.9f);

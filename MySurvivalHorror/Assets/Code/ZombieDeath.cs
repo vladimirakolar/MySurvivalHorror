@@ -19,6 +19,8 @@ public class ZombieDeath : MonoBehaviour
     {
         if (EnemyHealth <= 0 && StatusCheck == 0)
         {
+            this.GetComponent<ZombiAI>().enabled = false;
+            this.GetComponent<BoxCollider>().enabled = false;
             StatusCheck = 2;
             TheEnemy.GetComponent<Animation>().Stop("Walk");
             TheEnemy.GetComponent<Animation>().Play("FallingForward");
