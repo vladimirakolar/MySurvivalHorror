@@ -9,6 +9,10 @@ public class ZombiAI : MonoBehaviour
     public float enemySpeed = 0.01f;
     public bool attackTrigger = false;
     public bool isAttacking = false;
+    public AudioSource HurtSound1;
+    public AudioSource HurtSound2;
+    public AudioSource HurtSound3;
+    public int hurtGen;
 
     void Update()
     {
@@ -40,9 +44,22 @@ public class ZombiAI : MonoBehaviour
     IEnumerator InFlactDamage()
     {
         isAttacking = true;
+        hurtGen = Random.Range(1, 4);
+        if (hurtGen == 1)
+        {
+            HurtSound1.Play();
+        }
+        if (hurtGen == 2)
+        {
+            HurtSound2.Play();
+        }
+        if (hurtGen == 3)
+        {
+            HurtSound3.Play();
+        }
         yield return new WaitForSeconds(1.1f);
         GlobalHealth.currentHealth -= 5;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.9f);
         isAttacking = false;
 
     }
