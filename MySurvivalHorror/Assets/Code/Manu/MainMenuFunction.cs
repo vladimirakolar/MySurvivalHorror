@@ -16,6 +16,7 @@ public class MainMenuFunction : MonoBehaviour
 
     IEnumerator NewGameStart()
     {
+
         fadeOut.SetActive(true);
         buttonClick.Play();
         yield return new WaitForSeconds(3);
