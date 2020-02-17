@@ -11,7 +11,7 @@ public class ZombieDeath : MonoBehaviour
     public AudioSource JumpScareMusic;
     public AudioSource AmbMusic;
 
-    void DamageZombie (int DamageAmount)
+    public void DamageZombie (int DamageAmount)
     {
         EnemyHealth -= DamageAmount;
     }
