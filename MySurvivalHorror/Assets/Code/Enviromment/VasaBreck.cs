@@ -9,6 +9,7 @@ public class VasaBreck : MonoBehaviour
     public GameObject sfereObject;
     public AudioSource brockVase;
     public GameObject keyObject;
+    public GameObject keyTrigger;
     
     public void DemageZombie(int DamageAmount)
     {
@@ -20,6 +21,7 @@ public class VasaBreck : MonoBehaviour
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         brockVase.Play();
         keyObject.SetActive(true);
+        keyTrigger.SetActive(true);
         fakeVase.SetActive(false);
         brockenVasa.SetActive(true);
         yield return new WaitForSeconds(0.05f);
