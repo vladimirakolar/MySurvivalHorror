@@ -35,6 +35,7 @@ public class KeyPickUp : MonoBehaviour
                 ActionText.SetActive(false);
                 ExtraCross.SetActive(false);
                 TheKey.SetActive(false);
+                GlobalInventor.firstDoorKey = true;
             }
         }
     }

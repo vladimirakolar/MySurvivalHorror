@@ -10,6 +10,7 @@ public class LockedDoor : MonoBehaviour
     public GameObject ActionText;
     public GameObject ExtraCross;
     public AudioSource lockDoor;
+    public GameObject FirstKeyDoor;
     
     void Update()
     {
@@ -48,8 +49,17 @@ public class LockedDoor : MonoBehaviour
 
     IEnumerator DoorReset()
     {
-        lockDoor.Play();
-        yield return new WaitForSeconds(1);
-        this.GetComponent<BoxCollider>().enabled = true;
+        if (GlobalInventor.firstDoorKey = false)
+        {
+            lockDoor.Play();
+            yield return new WaitForSeconds(1);
+            this.GetComponent<BoxCollider>().enabled = true;
+        }
+        else
+        {
+            FirstKeyDoor.GetComponent<Animator>().Play("FirstKeyDoorAnim");
+            yield return new WaitForSeconds(1.1f);
+            this.GetComponent<BoxCollider>().enabled = false;
+        }
     }
 }
